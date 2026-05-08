@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
       const data = await login(email, password)
-      authLogin(data.accessToken, data.user)
+      authLogin(data.data.accessToken, data.data.user)
       navigate('/')
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please check your credentials.')
